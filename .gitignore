@@ -1,0 +1,14 @@
+# Exclude VS Code settings folder
+.vscode/
+
+# Exclude Python compiled files
+__pycache__/
+*.pyc
+
+# Exclude virtual environment folders
+venv/
+.env/
+
+# Exclude temporary files
+*.log
+*.tmp
