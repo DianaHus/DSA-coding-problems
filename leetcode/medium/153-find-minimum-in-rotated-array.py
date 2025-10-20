@@ -36,15 +36,23 @@ nums is sorted and rotated between 1 and n times.
 
 from typing import List
 
+# [3, 1, 2]
+#  0  1  2
 
 def findMin(nums: List[int]) -> int:
     l, r = 0, len(nums) - 1
-    while l <= r:
+    
+    while l < r:
         m = l + (r - l) // 2
+        
+        # Se nums[m] > nums[r], il minimo è nella metà destra
         if nums[m] > nums[r]:
             l = m + 1
+        # Altrimenti, il minimo è nella metà sinistra (incluso m)
         else:
-            r = m - 1
-    return nums[m]
+            r = m
+    
+    # Quando l == r, abbiamo trovato il minimo
+    return nums[l]
 
-print(findMin([3,4,5,1,2]))
+print(findMin([11,13,15,17]))
